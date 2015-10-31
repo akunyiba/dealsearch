@@ -6,7 +6,7 @@
 $.material.init();
 
 // App Backend
-var serviceBase = 'http://dealsearch.loc:8888/api/';
+var serviceBase = '/api/';
 
 var adApp = angular.module('adApp', [
     'ngRoute',
