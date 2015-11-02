@@ -13,5 +13,5 @@
 
 // API routes
 Route::resource('api/ads','Ads\AdsController');
-Route::resource('api/categories','Ads\CategoriesController');
-Route::resource('api/cities','Ads\CitiesController');
+Route::resource('api/categories','Ads\CategoriesController@index');
+Route::resource('api/cities','Ads\CitiesController@index');

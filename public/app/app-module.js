@@ -2,11 +2,7 @@
 
 // Module
 
-// Bootstrap Material Design
-$.material.init();
-
-// App Backend
-var serviceBase = '/api/';
+$.material.init(); // Bootstrap Material Design
 
 var adApp = angular.module('adApp', [
     'ngRoute',

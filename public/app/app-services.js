@@ -6,45 +6,45 @@ adApp_ad.factory("services", ['$http','$location','$route','toasty',
     function($http,$location,$route,toasty) {
 
         var successHandler = function(result){
-            $location.path('/ad/main');
+            $location.path('ad/main/');
         };
 
         var getAds = function(){
-            return $http.get(serviceBase + 'ads');
+            return $http.get('api/ads');
         };
         var createAd = function (ad) {
-            return $http.post(serviceBase + 'ads', ad)
+            return $http.post('api/ads', ad)
                 .then(successHandler)
                 .catch(errorHandler);
 
             function errorHandler(result){
                 alert("Error data");
-                $location.path('/ad/create');
+                $location.path('ad/create');
             }
         };
         var getAd= function(adID){
-            return $http.get(serviceBase + 'ads/' + adID);
+            return $http.get('api/ads/' + adID);
         };
 
         var getCityOptions = function(){
-            return $http.get(serviceBase + 'cities/');
+            return $http.get('api/cities');
         };
 
         var getCategoryOptions = function(){
-            return $http.get(serviceBase + 'categories/');
+            return $http.get('api/categories');
         };
 
         var updateAd = function (ad) {
-            return $http.put(serviceBase + 'ads/' + ad.id, ad )
+            return $http.put('api/ads/' + ad.id, ad )
                 .then(successHandler)
                 .catch(errorHandler);
             function errorHandler(result){
                 alert("Error data");
-                $location.path('/ad/update/' + ad.id)
+                $location.path('ad/update/' + ad.id)
             }
         };
         var deleteAd = function (adID) {
-            return $http.delete(serviceBase + 'ads/' + adID)
+            return $http.delete('api/ads/' + adID)
                 .then(successHandler)
                 .catch(errorHandler);
             function successHandler(result) {
